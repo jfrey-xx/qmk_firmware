@@ -5,8 +5,8 @@ void uart_init(void) {
 }
 
 void led_init(void) {
-	DDRD  |= (1<<1);
-	PORTD |= (1<<1);
+	DDRD  |= (1<<0) | (1<<1);
+	PORTD |= (1<<0) | (1<<1);
 	DDRF  |= (1<<4) | (1<<5);
 	PORTF |= (1<<4) | (1<<5);
 }
@@ -27,7 +27,11 @@ void matrix_scan_kb(void) {
 }
 
 void led_set_kb(uint8_t usb_led) {
-
+    if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
+        PORTD &= ~(1<<1); // green on falbatech device
+    } else {
+        PORTD |= (1<<1);
+    }
 }
 
 #ifdef ONEHAND_ENABLE
