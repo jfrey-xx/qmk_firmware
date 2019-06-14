@@ -57,6 +57,9 @@
 //#define NO_ACTION_MACRO
 //#define NO_ACTION_FUNCTION
 
+// custom tuning
+#define TAPPING_TOGGLE 2
+
 //UART settings for communication with the RF microcontroller
 #define SERIAL_UART_BAUD 1000000
 #define SERIAL_UART_DATA UDR1
