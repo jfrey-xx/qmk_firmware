@@ -11,3 +11,6 @@ To make use of this file you will need follow the following steps:
 * You are now ready to compile or use your keymap with the source
 
 More information can be found in the QMK docs: <https://docs.qmk.fm>
+
+
+Note: QMK configurator does not handle tap dance, hence in `keymap.c` the left and right shift keys need to be modified afterward to send caps lock as well.

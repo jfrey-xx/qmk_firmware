@@ -74,3 +74,5 @@ USB = /dev/ttyACM0
 
 # upload: build
 # 	$(REDOX_W_UPLOAD_COMMAND)
+
+TAP_DANCE_ENABLE = yes
