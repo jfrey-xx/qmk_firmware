@@ -26,11 +26,21 @@ void matrix_scan_kb(void) {
 	matrix_scan_user();
 }
 
+bool bnumlock = false;
+
 void led_set_kb(uint8_t usb_led) {
     if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
-        PORTD &= ~(1<<1); // green on falbatech device
+        grn_led_on;
     } else {
-        PORTD |= (1<<1);
+        grn_led_off;
+    }
+    
+   if (usb_led & (1<<USB_LED_NUM_LOCK)) {
+        bnumlock = true;
+        red_led_on;
+    } else {
+        bnumlock = false;
+        red_led_off;
     }
 }
 
